@@ -1,3 +1,5 @@
+ import { getKey } from "/secret.js"
+
 console.log("Let's get this party started!");
 
 const ul = document.getElementById("gifs");
@@ -15,7 +17,7 @@ document.getElementById("removeAllImages").addEventListener("click", () => {
 });
 
 async function getInformationBasedOnSearchTerm(q) {
-  const api_key = "xXm6A6y4jOqzLQkHaXPHCsZGG9h4bYBo";
+  const api_key = getKey();
   const result = await axios.get("http://api.giphy.com/v1/gifs/search", {
     params: { q, api_key },
   });
